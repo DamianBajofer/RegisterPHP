@@ -1,7 +1,7 @@
 <?php
 declare(strict_types = 1);
 if(!class_exists("Config")){
-	include("$_SERVER[DOCUMENT_ROOT]/RegisterAndLogin/config.class.php");
+	include("./config.class.php");
 }
 class DBC{
 	private static $MySQL;

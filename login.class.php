@@ -4,7 +4,7 @@ class Login{
 	private $MySQL;
 	public function __construct(){
 		if(!class_exists("DBC")){
-			include("$_SERVER[DOCUMENT_ROOT]/RegisterAndLogin/connect.class.php");
+			include("./connect.class.php");
 		}
 		$this -> MySQL = DBC::Connect();
 		$this -> MySQL -> select_db(Config::GetData("Database"));

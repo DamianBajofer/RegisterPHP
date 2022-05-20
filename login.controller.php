@@ -1,13 +1,19 @@
 <?php
 session_start();
 if(isset($_SESSION["username"])){
-	echo json_encode(array("status" => true, "UserData" => array("id" => $_SESSION["id"], "username" => $_SESSION["username"])));
 	return false;
 }
-if(!class_exists("Login")){
-	include("$_SERVER[DOCUMENT_ROOT]/RegisterAndLogin/login.class.php");
+if(!class_exists("Config")){
+	include("./config.class.php");
 }
-extract($_GET);
+if(!class_exists("Login")){
+	include("./login.class.php");
+}
+extract($_POST);
+if(!isset($username) && !isset($password)){
+	echo json_encode(array("status" => false, "code" => Config::$ErrorsCode[4]));
+	return false;
+}
 $login = new Login();
 echo json_encode($login -> init($username, $password));
 $login -> close();

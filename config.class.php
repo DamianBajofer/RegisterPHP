@@ -15,6 +15,15 @@ class Config{
 		"Domain" => "http://localapps.com/RegisterAndLogin/"
 	);
 
+	public static $ErrorsCode = array(
+		0 => "ALREADY_CONNECTED",
+		1 => "USERNAME_ALREADY_EXISTS",
+		2 => "EMAIL_ALREADY_EXISTS",
+		3 => "INTERNAL_ERROR",
+		4 => "EMPTY_DATA",
+		5 => "ALREADY_CONNECTED"
+	);
+
 	public static function GetData(string $data) : string{
 		return self::$MySQLData[$data];
 	}
