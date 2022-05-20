@@ -11,6 +11,10 @@ class Config{
 		"Database" => 	"website1"
 	);
 
+	public static $SiteData = array(
+		"Domain" => "http://localapps.com/RegisterAndLogin/"
+	);
+
 	public static function GetData(string $data) : string{
 		return self::$MySQLData[$data];
 	}
